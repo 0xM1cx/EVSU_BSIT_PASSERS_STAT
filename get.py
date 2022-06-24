@@ -26,7 +26,7 @@ def convertPdfToCSV():
 
 
 #FUNCTION FOR EXTRACTING SPECIFIC ROWS FROM A CSV FILE.
-def extractCsvRows():
+def extractCsvRows(letters):
     try:
         for i in letters:
             with open(f"CSV/EVSU-College-Admission-Application-Result-SY-2021-2022-{i.upper()}.csv", "r") as file:
@@ -37,7 +37,7 @@ def extractCsvRows():
 
             no_of_BSIT = []
             num = 0
-            with open("NumberOfBSITPassers.txt", "a") as f:
+            with open("NumberOfBSITPassers.txt", "w") as f:
                 for i in rows:
                     if "BSIT" in i and "MAIN CAMPUS (Tacloban)" in i:
                         num += 1
@@ -53,13 +53,15 @@ def main():
     print("Type 1 to download the pdf files")
     print("Type 2 to extract the tables in the pdf files and convert them to CSV")
     print("Type 3 to get the statistics of the passers")
-    user_input = input()
+    user_input = int(input())
 
     if user_input == 1:
         getPdfFiles()
     elif user_input == 2:
         convertPdfToCSV()
     elif user_input == 3:
-        extractCsvRows()
+        extractCsvRows(letters)
     else: 
         print("Pick between 1 - 3")
+
+main()
