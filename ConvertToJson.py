@@ -1,4 +1,3 @@
-import matplotlib
 import string
 import csv
 import json
