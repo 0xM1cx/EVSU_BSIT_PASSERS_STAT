@@ -29,7 +29,7 @@ def convertPdfToCSV():
 def extractCsvRows(letters):
     try:
         for i in letters:
-            with open(f"CSV/EVSU-College-Admission-Application-Result-SY-2021-2022-{i.upper()}.csv", "r") as file:
+            with open(f"CSV/EVSU-College-Admission-Application-Result-SY-2020-2021-{i.upper()}.csv", "r") as file:
                 reader = csv.reader(file)
                 rows = []
                 for row in reader:
@@ -45,6 +45,10 @@ def extractCsvRows(letters):
                     else:
                         continue
                 f.write("\n")
+            
+            with open("passers.txt", "w") as file:
+                for b in rows:
+                    file.write(b)
     except FileNotFoundError:
         print("File Not Found, skipping...")
 
