@@ -35,7 +35,6 @@ def extractCsvRows(letters):
                 for row in reader:
                     rows.append(row)
 
-            no_of_BSIT = []
             num = 0
             with open("NumberOfBSITPassers.txt", "w") as f:
                 for i in rows:
