@@ -16,6 +16,9 @@ letters = string.ascii_uppercase
 def importToJSON(data):
     with open("DATA.json", "w") as jsonFILE:
         json.dump(data, jsonFILE, indent=8)
+
+
+
 def getPassers():
 
     courses_dict = {
@@ -62,35 +65,36 @@ def getPassers():
             'BTLED IA': [], 
             'BSGE': [], 
             'BSMT MS': [], 
-            'BS Ind. Tech. CC': []
+            'BS Ind. Tech. CC': [],
+            'BTVED AT': [],
+            'BTVED CCT': [],
+            'BS Ind. Tech. RAC': [],
+            'BTVED ET': [],
+            'BS Ind. Tech. CFD': [],
+            'BSMT WF': []
         }
     
-    name = []
 
     # loop through every csv file that are sorted alphabetically
     for i in letters:
         try:
             with open(f"CSV/EVSU-College-Admission-Application-Result-SY-2021-2022-{i}.csv") as file:
                 reader = csv.reader(file)
-                try:
+                
+                for row in reader:
 
-                    for row in reader:
-
-                        if row[5] != "PROGRAM":
-                            courses_dict[row[5]].append(f"{row[2]}, {row[3]} {row[4]}")
-
-                except KeyError:
-                    print("Skipping")
+                    if row[5] != "PROGRAM":
+                        courses_dict[row[5]].append(f"{row[2]}, {row[3]} {row[4]}")
            
-            JSON_DATA  = json.dumps(courses_dict, indent=8)
-
-            loaded = json.loads(JSON_DATA)
-
-            return loaded            
-        
         except FileNotFoundError:
             print("File Not Found, Skipping...")
 
+
+    JSON_DATA  = json.dumps(courses_dict, indent=8)
+
+    loaded = json.loads(JSON_DATA)
+
+    return loaded            
 
 json_DATA = getPassers()
 
