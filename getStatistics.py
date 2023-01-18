@@ -14,7 +14,9 @@ def getJsonData():
     return json_data
 
 # Get the number of students per key in the json_data dict
+
 def getStats(data):
+    # Program Generated List of courses found in the pdf files
     courses_dict = {
         'BEED': 0, 
         'BS Ind. Tech. GAP': 0,  
