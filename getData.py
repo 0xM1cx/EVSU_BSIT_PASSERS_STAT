@@ -1,4 +1,3 @@
-
 import string
 import csv
 import string
@@ -57,14 +56,15 @@ def main():
     print("Type 2 to extract the tables in the pdf files and convert them to CSV")
     print("Type 3 to get the statistics of the passers")
     user_input = int(input())
-
-    if user_input == 1:
-        getPdfFiles()
-    elif user_input == 2:
-        convertPdfToCSV()
-    elif user_input == 3:
-        extractCsvRows(letters)
-    else: 
-        print("Pick between 1 - 3")
-
+    try:
+        if user_input == 1:
+            getPdfFiles()
+        elif user_input == 2:
+            convertPdfToCSV()
+        elif user_input == 3:
+            extractCsvRows(letters)
+        else: 
+            print("Pick between 1 - 3")
+    except:
+        print("INPUT MUST BE INTEGER")
 main()

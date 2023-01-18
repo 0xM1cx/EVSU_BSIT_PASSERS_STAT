@@ -71,7 +71,7 @@ def getStats(data):
     }
 
     for key in courses_dict.keys():
-        courses_dict[key] = len(data[key])
+        courses_dict[key] = int(len(data[key]))
 
     print(courses_dict.items())
     return courses_dict
