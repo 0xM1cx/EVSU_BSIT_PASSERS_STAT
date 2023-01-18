@@ -59,7 +59,13 @@ def getStats(data):
         'BTLED IA': 0, 
         'BSGE': 0, 
         'BSMT MS': 0, 
-        'BS Ind. Tech. CC': 0
+        'BS Ind. Tech. CC': 0,
+        'BTVED AT': 0,
+        'BTVED CCT': 0,
+        'BS Ind. Tech. RAC': 0,
+        'BTVED ET': 0,
+        'BS Ind. Tech. CFD': 0,
+        'BSMT WF': 0
     }
 
     for key in courses_dict.keys():

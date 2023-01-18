@@ -86,7 +86,7 @@ def getPassers():
                     if row[5] != "PROGRAM":
                         courses_dict[row[5]].append(f"{row[2]}, {row[3]} {row[4]}")
            
-        except FileNotFoundError:
+        except FileNotFoundError:   
             print("File Not Found, Skipping...")
 
 
