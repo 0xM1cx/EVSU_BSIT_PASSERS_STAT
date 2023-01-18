@@ -91,7 +91,6 @@ def getPassers():
         except FileNotFoundError:   
             print("File Not Found, Skipping...")
 
-
     JSON_DATA  = json.dumps(courses_dict, indent=8)
 
     loaded = json.loads(JSON_DATA)
