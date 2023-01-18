@@ -4,12 +4,24 @@ import string
 from tabula import convert_into_by_batch
 from tabula import read_pdf
 from subprocess import run
-
 # A little caveat, this only works on linux due to it being able to run wget without any 
 # other proprietary syntax like powershell, cmd, etc.
 
+'''
+AUTHOR: Shawn Michael A. Sudaria
+GITHUB: https://github.com/0xM1cx
+STATUS: Polishing
 
+DESCRIPTION
+This program has the following features:
+1. Download the pdf files from the link given.
+2. Convert the downloaded pdf files into csv files and put
+them in a CSV folder.
+3. Parse the data in the file to be written in a text file.
+
+'''
 letters = string.ascii_letters
+
 # FUNCTION TO DOWNLOAD ALL THE PDF FILES ON THE EVSU WEBSITE.
 def getPdfFiles():
     for chars in letters.upper():
@@ -18,21 +30,17 @@ def getPdfFiles():
     run(["cp", "*", "/CSV"])
 
 
-#FUNCTION TO CONVERT PDF TO CSV
+# FUNCTION TO CONVERT PDF TO CSV
 def convertPdfToCSV():
     convert_into_by_batch("./", output_format="csv", pages="all")
     
-
-
-#FUNCTION FOR EXTRACTING SPECIFIC ROWS FROM A CSV FILE.
+# FUNCTION FOR EXTRACTING SPECIFIC ROWS FROM A CSV FILE.
 def extractCsvRows(letters):
     try:
         for i in letters:
             with open(f"CSV/EVSU-College-Admission-Application-Result-SY-2020-2021-{i.upper()}.csv", "r") as file:
                 reader = csv.reader(file)
-                rows = []
-                for row in reader:
-                    rows.append(row)
+                rows = [row for row in reader]
 
             num = 0
             with open("NumberOfBSITPassers.txt", "w") as f:
@@ -56,6 +64,7 @@ def main():
     print("Type 2 to extract the tables in the pdf files and convert them to CSV")
     print("Type 3 to get the statistics of the passers")
     user_input = int(input())
+
     try:
         if user_input == 1:
             getPdfFiles()

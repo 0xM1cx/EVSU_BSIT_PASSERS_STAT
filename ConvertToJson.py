@@ -3,21 +3,24 @@ import csv
 import json
 
 letters = string.ascii_uppercase
-# with open("NumberOfBSITPassers.txt", "r") as f:
-#     NumberOfPassers = []
-#     lines = f.readlines()
-#     for i in lines:
-#         if i == " ":
-#             print("blackline")
-#         else:
-#             print(i)
 
+
+'''
+
+AUTHOR: Shawn Michael A. Sudaria
+GITHUB: https://github.com/0xM1cx
+STATUS: In Development
+
+DESCRIPTION: 
+The goal of this file is to parse the data in the csv files
+and put them all into a json file to be accessed by the 
+getStatistics.py file for it to be displayed graphically
+
+'''
 
 def importToJSON(data):
     with open("DATA.json", "w") as jsonFILE:
         json.dump(data, jsonFILE, indent=8)
-
-
 
 def getPassers():
 
@@ -73,7 +76,6 @@ def getPassers():
             'BS Ind. Tech. CFD': [],
             'BSMT WF': []
         }
-    
 
     # loop through every csv file that are sorted alphabetically
     for i in letters:
@@ -96,6 +98,7 @@ def getPassers():
 
     return loaded            
 
-json_DATA = getPassers()
 
+
+json_DATA = getPassers()
 importToJSON(json_DATA)
