@@ -83,8 +83,7 @@ def getPassers():
             with open(f"CSV/EVSU-College-Admission-Application-Result-SY-2021-2022-{i}.csv") as file:
                 reader = csv.reader(file)
                 
-                for row in reader:
-
+                for row in reader: # This loops through the rows inside every CSV files
                     if row[5] != "PROGRAM":
                         courses_dict[row[5]].append(f"{row[2]}, {row[3]} {row[4]}")
            

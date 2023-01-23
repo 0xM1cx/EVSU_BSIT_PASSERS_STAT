@@ -60,12 +60,14 @@ def extractCsvRows(letters):
         print("File Not Found, skipping...")
 
 
+
 def main():
     print("Type 1 to download the pdf files")
     print("Type 2 to extract the tables in the pdf files and convert them to CSV")
     print("Type 3 to get the statistics of the passers")
     user_input = int(input())
 
+    
     try:
         if user_input == 1:
             getPdfFiles()
