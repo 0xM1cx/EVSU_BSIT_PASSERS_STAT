@@ -1,5 +1,6 @@
 import matplotlib.pyplot as akonplotter
 import json
+import math
 '''
 AUTHOR: Shawn Michael A. Sudaria
 GITHUB: https://github.com/0xM1cx
@@ -78,6 +79,7 @@ def getStats(data):
         'BSMT WF': 0
     }
 
+
     # This loop gets the keys and appends the lengths of their
     # value and storin them in the course_dict dictionary.
     for key in courses_dict.keys():
@@ -86,18 +88,17 @@ def getStats(data):
     print(courses_dict.items())
     return courses_dict
 
-
 # Display the statistical data of the passers
 def displayStatData(course_dict):
     degree_Programs = list(course_dict.keys()) # Getting the degree programs from the dictionary and making them into a list 
-    numOfPassers = list(course_dict.values()) # Getting the values of the dict, which are the lengths the the array value or the rnumber of students
+    numOfPassers = list((course_dict.values())) # Getting the values of the dict, which are the lengths the the array value or the rnumber of students
     
     print(numOfPassers)
     # Draws the figure given the dimensions
-    fig =  akonplotter.figure(figsize=(40, 40))
+    fig =  akonplotter.figure(figsize=(600, 40))
 
     akonplotter.barh(degree_Programs, numOfPassers, color="blue")
-
+    
     akonplotter.title("EVSU Class of 2021-2022 Passers")
     akonplotter.xlabel("Number of Passers", fontsize=0.2)
     akonplotter.ylabel("Degree Programs")
