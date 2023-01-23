@@ -4,6 +4,7 @@ import string
 from tabula import convert_into_by_batch
 from tabula import read_pdf
 from subprocess import run
+
 # A little caveat, this only works on linux due to it being able to run wget without any 
 # other proprietary syntax like powershell, cmd, etc.
 
