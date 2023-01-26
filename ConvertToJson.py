@@ -86,17 +86,11 @@ def getPassers():
                 for row in reader: # This loops through the rows inside every CSV files
                     if row[5] != "PROGRAM":
                         courses_dict[row[5]].append(f"{row[2]}, {row[3]} {row[4]}")
-           
         except FileNotFoundError:   
             print("File Not Found, Skipping...")
 
     JSON_DATA  = json.dumps(courses_dict, indent=8)
-
     loaded = json.loads(JSON_DATA)
-
     return loaded            
-
-
-
 json_DATA = getPassers()
 importToJSON(json_DATA)
