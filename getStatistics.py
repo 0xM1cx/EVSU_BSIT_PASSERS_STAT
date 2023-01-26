@@ -96,11 +96,11 @@ def displayStatData(course_dict):
     print(numOfPassers)
     # Draws the figure given the dimensions
     fig =  akonplotter.figure(figsize=(600, 40))
-
+    
     akonplotter.barh(degree_Programs, numOfPassers, color="blue")
-
+    
     akonplotter.title("EVSU Class of 2021-2022 Passers")
-    akonplotter.xlabel("Number of Passers", fontsize=0.2)
+    akonplotter.xlabel("Number of Passers", fontsize=5)
     akonplotter.ylabel("Degree Programs")
     akonplotter.xticks(rotation=90)
     
