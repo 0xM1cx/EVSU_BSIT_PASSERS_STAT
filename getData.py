@@ -67,7 +67,6 @@ def main():
     print("Type 3 to get the statistics of the passers")
     user_input = int(input())
 
-    
     try:
         if user_input == 1:
             getPdfFiles()
