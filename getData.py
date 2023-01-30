@@ -32,8 +32,8 @@ def getPdfFiles():
 
 
 # FUNCTION TO CONVERT PDF TO CSV
-def convertPdfToCSV():
-    convert_into_by_batch("./", output_format="csv", pages="all")
+# def convertPdfToCSV():
+#     convert_into_by_batch("./", output_format="csv", pages="all")
     
 # FUNCTION FOR EXTRACTING SPECIFIC ROWS FROM A CSV FILE.
 def extractCsvRows(letters):
