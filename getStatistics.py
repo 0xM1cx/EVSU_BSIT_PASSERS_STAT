@@ -23,7 +23,7 @@ def getJsonData():
         json_data = json.load(data) 
     return json_data
 
-# Get the number of students per key in the json_data dict
+# Get the number of students per key in the json_data dict | temp
 def getStats(data):
     # Program Generated List of courses found in the pdf files
     courses_dict = {
