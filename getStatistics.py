@@ -66,7 +66,7 @@ def getStats():
         'BTVTED GFD': 100,
         'BSME': 120,
         'BSECE': 80,
-        'BSGE': 4,
+        'BSGE': 40,
         'BSIENG': 80,
         'BSEE': 120
     }
